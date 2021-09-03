@@ -7,3 +7,14 @@ public class Hello {
     // without the 'ln', next output will be same line as this
   }
 }
+
+public class Creator {
+	public static void main(String[] args) {
+    String name = "James Gosling";
+    // declaring variable of string named 'name' and assigning a value
+   	int yearCreated = 1995;
+    System.out.println(name);
+    // printing out the variable (no '' needed for the variable)
+    System.out.println(yearCreated);
+	}
+}
