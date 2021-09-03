@@ -1,6 +1,9 @@
-public class Hello {
+public class Hello { 
+  // creates a class called 'Hello'
   public static void main(String[] args) {
-    System.out.println("This statement creates a new line after this output")
-    System.out.print("This statement outputs will be in the same line as the next")
+    System.out.println("New line after this output")
+    // this creates a new line after this statement
+    System.out.print("Same line as the next output")
+    // without the 'ln', next output will be same line as this
   }
 }
