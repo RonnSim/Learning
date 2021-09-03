@@ -31,3 +31,15 @@ public class Test_1 {
               Goodbye (on different lines)*/
 	}
 }
+
+public class MyProfile {
+	public static void main(String[] args) {   
+      String name = "Ronn";
+      int age = 27;
+      double desiredSalary = 6000.00;
+      char gender = 'm';
+      boolean lookingForJob = true;
+      System.out.println(name + " " + age);
+      // prints many variable (with the '+')
+	}
+}
