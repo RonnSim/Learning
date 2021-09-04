@@ -300,21 +300,164 @@ System.out.println(thunderBird); // Prints: null */
 
 
 // Declaring instance fields
-              public class Car {
-                /*
-                declare fields inside the class
-                by specifying the type and name
-                */
-                String color;
+            public class Car {
+              // declare fields inside the class by specifying the type and name
+              String color;
           
             public Car() {
-              /* 
-              instance fields available in
-              scope of constructor method
-              */
             }
           
             public static void main(String[] args) {
-              // body of main method
             }
           }
+
+
+// Constructor Parameters
+
+          public class Car {
+            String color;
+            public Car(String carColor) {
+              // constructor method with a parameter
+              // parameter value assigned to the field - (String carColor)
+              // signature = Car(String carColor)
+              color = carColor;
+              // assign parameter value to instance field
+            }
+            public static void main(String[] args) {
+              // program tasks
+            }
+          }
+
+
+          public class Car {
+            String color;
+            int mpg;
+            boolean isElectric;
+          
+            // constructor 1:
+            public Car(String carColor, int milesPerGallon) {
+              color = carColor;
+              mpg = milesPerGallon;
+            }
+            // constructor 2:
+            public Car(boolean electricCar, int milesPerGallon) {
+              isElectric = electricCar;
+              mpg = milesPerGallon;
+            }
+          }
+          /* input: Car myCar = new Car(true, 40), 
+          this will automatically refer back to the signatures and compile with the correct constructor */
+
+
+// Default instance fields - will follow default if none input 
+
+          public class Car {
+            String color = "red";
+            boolean isElectric = false;
+            int cupHolders = 4;
+            // sets the default values as above
+          
+            public static void main(String[] args) {
+              Car myCar = new Car();
+              System.out.println(myCar.color); 
+              // Prints: red, due to the default
+            }
+          }
+
+
+// Accessing a field 
+
+          public class Car {
+            String color;
+          
+            public Car(String carColor) {
+              // assign parameter value to instance field
+              color = carColor;
+            }
+          
+            public static void main(String[] args) {
+              // parameter value supplied when calling constructor
+              Car ferrari = new Car("red");
+            }
+          }
+          // accessing a field: objectName.fieldName
+          // ferrari.color - returns "red"
+
+    // Example 
+          public class Store {
+            // instance fields
+            String productType;
+            
+            // constructor method
+            public Store(String product) {
+              productType = product;
+            }
+            
+            // main method
+            public static void main(String[] args) {
+              Store lemonadeStand = new Store("lemonade");
+              System.out.println(lemonadeStand.productType);
+              // accessing fields must use the instance field (not parameter)
+            }
+          }
+
+
+// Multiple instance fields
+
+          public class Car {
+            String color;
+            // new fields!
+            boolean isRunning;
+            int velocity;
+          
+            // new parameters that correspond to the new fields
+            public Car(String carColor, boolean carRunning, int milesPerHour) {
+              color = carColor;
+              // assign new parameters to the new fields
+              isRunning = carRunning;
+              velocity = milesPerHour;
+            }
+          
+            public static void main(String[] args) {
+              // new values passed into the method call
+              // values must match order in parameters
+              Car ferrari = new Car("red", true, 27);
+              Car renault = new Car("blue", false, 70);
+          
+              System.out.println(renault.isRunning);
+              // false
+              System.out.println(ferrari.velocity);
+              // 27
+            }
+          }
+
+
+// Review of classes
+
+          public class Dog {
+            String breed;
+            boolean hasOwner;
+            int age;
+            
+            public Dog(String dogBreed, boolean dogOwned, int dogYears) {
+              System.out.println("Constructor invoked!");
+              breed = dogBreed;
+              hasOwner = dogOwned;
+              age = dogYears;
+            }
+            
+            public static void main(String[] args) {
+              System.out.println("Main method started");
+              Dog fido = new Dog("poodle", false, 4);
+              Dog nunzio = new Dog("shiba inu", true, 12);
+              boolean isFidoOlder = fido.age > nunzio.age;
+              int totalDogYears = nunzio.age + fido.age;
+              System.out.println("Two dogs created: a " + fido.breed + " and a " + nunzio.breed);
+              System.out.println("The statement that fido is an older dog is: " + isFidoOlder);
+              System.out.println("The total age of the dogs is: " + totalDogYears);
+              System.out.println("Main method finished");
+            }
+          }
+
+
+          
