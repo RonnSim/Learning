@@ -460,4 +460,92 @@ System.out.println(thunderBird); // Prints: null */
           }
 
 
+// Methods
+
+          public void checkBalance(){
+            // public - other classes can access this method
+            // void - no specific output from the method
+            // checkBalance - name of method
+            // method signature - name of method + parameters eg. checkBalance()
+            System.out.println("Hello!");
+            System.out.println("Your balance is " + balance);
+            // body of method - within the {}
+          }
+
+      // Example 1
+          public class Store {
+            // instance fields
+            String productType;
+            
+            // constructor method
+            public Store(String product) {
+              productType = product;
+            }
+            
+            // additionally added advertise method
+            public void advertise() {
+              System.out.println("Come spend some money!");
+              System.out.println("Selling " + productType + "!");
+              // but this does not print out yet, does not get executed without calling
+            }
+            // main method
+            public static void main(String[] args) {
+              
+            }
+          }
+
+      // Calling a method - to get executed
+          class Car {
           
+            String color;
+          
+            public Car(String carColor) {
+              color = carColor;
+            }
+          
+            public void startEngine() {
+              System.out.println("Starting the car!");
+              System.out.println("Vroom!");
+            }
+          
+            public static void main(String[] args){
+              Car myFastCar = new Car("red");
+              // Call a method on an object:
+              myFastCar.startEngine();
+              // reference to object  - myFastCar
+              // use '.' operator to call the method - startEngine()
+              System.out.println("That was one fast car!");
+            }
+          }
+          /* Output: Starting the car!
+                      Vroom!
+                      That was one fast car! */
+          // code runs starting from the main method, other methods are ignored unless being called
+
+
+      // Calling method multiple times
+          public class Store {
+            // instance fields
+            String productType;
+            
+            // constructor method
+            public Store(String product) {
+              productType = product;
+            }
+            
+            // advertise method
+            public void advertise() {
+              System.out.println("Selling " + productType + "!");
+              System.out.println("Come spend some money!");
+            }
+            
+            // main method
+            public static void main(String[] args) {
+              Store lemonadeStand = new Store("Lemonade");
+              lemonadeStand.advertise();
+              lemonadeStand.advertise();
+              lemonadeStand.advertise();
+              // able to easily call on method multiple times
+            }
+          }
+
