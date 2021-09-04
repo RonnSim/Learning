@@ -1,3 +1,5 @@
+// Print in Java:
+
 public class Hello { 
   // creates a class called 'Hello'
   public static void main(String[] args) {
@@ -9,6 +11,9 @@ public class Hello {
   }
 }
 
+
+// Variables:
+
 public class Creator {
 	public static void main(String[] args) {
     String name = "James Gosling";
@@ -19,6 +24,9 @@ public class Creator {
     System.out.println(yearCreated);
 	}
 }
+
+
+// String type - escape sequence
 
 public class Test_1 {
 	public static void main(String[] args) {   
@@ -32,6 +40,9 @@ public class Test_1 {
 	}
 }
 
+
+// Print Variables:
+
 public class MyProfile {
 	public static void main(String[] args) {   
       String name = "Ronn";
@@ -41,5 +52,29 @@ public class MyProfile {
       boolean lookingForJob = true;
       System.out.println(name + " " + age);
       // prints many variable (with the '+')
+	}
+}
+
+
+// Operators:
+
+public class GuessingGame {
+	public static void main(String[] args) {   
+		int mystery1 = 8 + 6;
+    /* java includes arithmetic operators, expressions
+    resulting value will be the same data type */
+    int mystery2 = 8 - 6;
+    System.out.println(mystery2);
+	}
+}
+
+public class PlusAndMinus {
+	public static void main(String[] args) {   
+		int zebrasInZoo = 8;
+    int giraffesInZoo = 4;
+    int animalsInZoo = zebrasInZoo + giraffesInZoo;
+    System.out.println(animalsInZoo);
+    int numZebrasAfterTrade = zebrasInZoo - 2;
+    System.out.println(numZebrasAfterTrade);
 	}
 }
