@@ -242,3 +242,56 @@ public class Final {
 }
 
 
+/* Object-oriented programming - Class
+Describes how an instance behaves and what information can be stored */
+
+public class Car {
+  // defines class named Car, public - access level modifier that allows other classes to interact with this class
+  public static void main(String[] args) {
+    // main() - lists the program's tasks to be performed, it runs when executing the compiled Car.class file
+  }
+  // end of scope for main()
+}
+// end of scope for Class Car
+
+
+// Class - Constructors
+
+public class Car {
+  // Constructor method - Car()
+  public Car() {
+    // instructions for creating a Car instance
+  }  
+ 
+  public static void main(String[] args) {
+    // body of main method
+  
+    Car ferrari = new Car();
+    /* Invoke the Car() constructor, ferrari variable is declared a referenced data type called Car
+    after '=' we invoke the constructor method 'Car()', and keyword 'new', indicates creating an instance */
+  }
+}
+
+/* Output Example: Car thunderBird = new Car();
+System.out.println(thunderBird); // Prints: Car@76ed5528
+ 
+thunderBird = null; // change value to null
+System.out.println(thunderBird); // Prints: null */
+
+public class Store {
+  // new method: Store () constructor!
+  public Store() {
+    System.out.println("I am inside the constructor method.");
+  }
+  // main method is where we create instances! main() runs first in the code
+  public static void main(String[] args) {
+    System.out.println("Start of the main method.");
+    Store lemonadeStand = new Store();
+    // created instance, therefore moves to Store() constructor code
+    System.out.println(lemonadeStand);
+    // comes back to main() after Store () code runs
+  }
+}
+/* Output is: Start of the main method.
+              I am inside the constructor method.
+              Store@2aae9190 */
