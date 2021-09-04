@@ -124,3 +124,121 @@ public class BakeSale {
 	}
 }
 
+
+// < , >
+
+public class GreaterLessThan {
+	public static void main(String[] args) {   
+		double creditsEarned = 176.5;
+    double creditsOfSeminar = 8;
+    double creditsToGraduate = 180;
+    System.out.println(creditsEarned < creditsOfSeminar);
+    // prints true/false when compared <, >
+    
+    double myBalance = 200.05;
+    double costOfBuyingNewLaptop = 1000.05;
+    boolean canBuyLaptop = myBalance > costOfBuyingNewLaptop;
+    // set boolean data type to variable
+  }
+}
+
+// >=, <=
+
+double paycheckAmount = 620;
+double calculatedPaycheck = 15.50 * 40;
+System.out.println(paycheckAmount >= calculatedPaycheck);
+//this will print true, since paycheckAmount equals calculatedPaycheck
+
+public class GreaterThanEqualTo {
+  	public static void main(String[] args){
+      double recommendedWaterIntake = 8;
+      double daysInChallenge = 30;
+      double yourWaterIntake = 235.5;
+      double totalRecommendedAmount = recommendedWaterIntake * daysInChallenge;
+      boolean isChallengeComplete = yourWaterIntake >= totalRecommendedAmount;
+      System.out.println(isChallengeComplete); 
+    }       
+}
+
+
+// ==
+
+double paycheckAmount = 620;
+double calculatedPaycheck = 15.50 * 40;
+System.out.print(paycheckAmount == calculatedPaycheck);
+// This will print true, since paycheckAmount equals calculatedPaycheck
+
+double balance = 20000.0;
+double amountToDeposit = 620;
+double updatedBalance = balance + amountToDeposit;
+boolean balanceHasChanged = balance != updatedBalance;
+// balanceHasChanged holds true, since balance does not equal updatedBalance
+
+public class EqualNotEqual {
+	public static void main(String[] args) {   
+		int songsA = 9;
+    int songsB = 9;
+    int albumLengthA = 41;
+    int albumLengthB = 53;
+    boolean sameNumberOfSongs = songsA == songsB;
+	}
+}
+
+
+// .equals() - for comparing strings, .equals is an in-built function
+
+String person1 = "Paul";
+String person2 = "John";
+String person3 = "Paul";
+System.out.println(person1.equals(person2));
+// Prints false, since "Paul" is not "John"
+System.out.println(person1.equals(person3));
+// Prints true, since "Paul" is "Paul"
+
+public class Song {
+  	public static void main(String[] args){
+      String line1 = "Nah nah nah nah nah nah nah nah nah yeah";
+      String line2 = "Nah nah nah nah nah nah, nah nah nah, hey Jude";
+      String line3 = "Nah nah nah nah nah nah, nah nah nah, hey Jude";
+      System.out.println(line2.equals(line3));
+    }       
+}
+
+
+// String Concatenate - to join
+
+String username = "PrinceNelson";
+System.out.println("Your username is: " + username);
+// prints the combined 
+
+int balance = 10000;
+String message = "your balance is: " + balance;
+System.out.println(message);
+// automatically converts to String data type
+
+public class Zoo {
+  	public static void main(String[] args){
+      int animals = 12;
+      String species = "zebra";
+      String zooDescription = "Our zoo has " + animals + " " + species + "s!";
+      System.out.println(zooDescription);
+      //prints 'Our zoo has 12 zebras!'
+    }       
+}
+
+
+// final keyword - for variables that should not be changed
+
+final int yearBorn = 1968;
+//prepend 'final' to the variable
+
+public class Final {
+	public static void main(String[] args) { 
+      final double pi = 3.14;
+      System.out.println(pi);
+      pi = pi + 1;
+      // will have an error as we cannot change values to a final variable
+	}
+}
+
+
