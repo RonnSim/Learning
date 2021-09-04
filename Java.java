@@ -56,7 +56,7 @@ public class MyProfile {
 }
 
 
-// Operators:
+// Operators: order of operators: ( ), *, /, %, +, -
 
 public class GuessingGame {
 	public static void main(String[] args) {   
@@ -78,3 +78,49 @@ public class PlusAndMinus {
     System.out.println(numZebrasAfterTrade);
 	}
 }
+
+public class MultAndDivide {
+	public static void main(String[] args) {   
+		double subtotal = 30;
+    double tax = 0.0875;
+    double total = subtotal + (subtotal*tax);
+    // Does not matter the (), will follow math sequence
+    System.out.println(total);
+    double perPerson = total/4;
+    System.out.println(perPerson);
+	}
+}
+
+public class Modulo {
+	public static void main(String[] args) {   
+		int students = 26;
+    int leftOut = students%3;
+    System.out.println(leftOut);
+	}
+}
+// Modulo, will determine odd/even 
+7 % 2
+// 1, odd!
+8 % 2
+// 0, even!
+9 % 2
+// 1, odd!
+
+
+// Compound assignment operators:
+addition -> +=
+subtraction -> -=
+multiplication -> *=
+division -> /=
+modulo -> %=
+
+public class BakeSale {
+	public static void main(String[] args) {   
+		int numCookies = 17;
+    numCookies -= 3;
+    numCookies /= 2;
+    // Compounded operators
+    System.out.println(numCookies);
+	}
+}
+
