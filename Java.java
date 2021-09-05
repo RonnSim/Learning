@@ -460,7 +460,7 @@ System.out.println(thunderBird); // Prints: null */
           }
 
 
-// Methods
+// Methods - it is a task that an object of a class performs
 
           public void checkBalance(){
             // public - other classes can access this method
@@ -504,6 +504,7 @@ System.out.println(thunderBird); // Prints: null */
             }
           
             public void startEngine() {
+              // adding the scope of the method:
               System.out.println("Starting the car!");
               System.out.println("Vroom!");
             }
@@ -549,3 +550,158 @@ System.out.println(thunderBird); // Prints: null */
             }
           }
 
+
+      // Scope of method - tasks in the {} of methods
+          class Car {
+            // variables declared at the top of the class can be used in all the methods
+            String color;
+            int milesDriven;
+          
+            public Car(String carColor) {
+              color = carColor;
+              milesDriven = 0;         
+            }
+          
+            public void drive() {
+              // 'message' variable declared in specific methods can only be used in the specific method
+              String message = "Miles driven: " + milesDriven;
+              System.out.println(message);
+            }
+          
+            public static void main(String[] args){
+              Car myFastCar = new Car("red");
+              myFastCar.drive();
+            }
+          }
+
+          //Example of method error:
+            public class Store {
+              String productType;
+              
+              // constructor method
+              public Store(String product) {
+                productType = product;
+              }
+              
+              // advertise method
+              public void advertise() {
+                String message = "Selling " + cookie + "!";
+                // error occurs - cookie only declared in main method
+                System.out.println(message);
+              }
+              
+              // main method
+              public static void main(String[] args) {
+                String cookie = "Cookies";
+                Store cookieShop = new Store(cookie);
+                
+                cookieShop.advertise();
+                System.out.println(message);
+                // error occured - 'message' variable only declared in advertise method
+              }
+            }
+
+
+      // Adding parameters
+
+          class Car {
+    
+            String color;
+          
+            public Car(String carColor) {
+              color = carColor;         
+            }
+          
+            public void startRadio(double stationNum, String stationName) {
+              // adding parameters, does not have to be in the instance field
+              System.out.println("Turning on the radio to " + stationNum + ", " + stationName + "!");
+              System.out.println("Enjoy!");
+            }
+          
+            public static void main(String[] args){
+              Car myCar = new Car("red");
+              myCar.startRadio(103.7, "Meditation Station");
+            }
+          }
+          /* output from above: 
+          Turning on the radio to 103.7, Meditation Station!
+          Enjoy! */
+
+
+      // Mulitple methods with the same name - as long as parameter is unique
+
+          // Method 1
+          public void startRadio(double stationNum, String stationName) {
+            System.out.println("Turning on the radio to " + stationNum + ", " + station + "!");
+            System.out.println("Enjoy!");
+          }
+          
+          // Method 2
+          public void startRadio(double stationNum) {
+            System.out.println("Turning on the radio to " + stationNum + "!");
+          }
+          
+          public static void main(String[] args){
+            Car myCar = new Car("red");
+            // Calls the first startRadio() method
+            myCar.startRadio(103.7, "Meditation Station");
+          
+            // Calls the second startRadio() method
+            myCar.startRadio(98.2);
+          }
+
+
+      // Reassigning instance fields
+          public SavingsAccount{
+            double balance;
+            public SavingsAccount(double startingBalance){
+              balance = startingBalance;
+            }
+          
+            public void deposit(double amountToDeposit){
+              //Task to add amountToDeposit to the balance
+              double updatedBalance = balance + amountToDeposit;
+              balance = updatedBalance;
+              // Change the value of the variable 'balance' to the new balance value
+            }
+          
+            public void withdraw(double amountToWithdraw){
+              //Task to subtract amountToWithdraw from the balance
+            }
+          
+            public static void main(String[] args){
+              SavingsAccount myAccount = new SavingsAccount(2000);
+              System.out.println(myAccount.balance);
+              myAccount.deposit(100);
+              // when we call on the deposit method, it will change the value of the instance field
+              System.out.println(myAccount.balance);
+            }
+            }
+          }
+
+          // Example
+
+          public class Store {
+            // instance fields
+            String productType;
+            double price;
+            
+            // constructor method
+            public Store(String product, double initialPrice) {
+              productType = product;
+              price = initialPrice;
+            }
+            
+            // increase price method
+            public void increasePrice(double priceToAdd){
+              double newPrice = price + priceToAdd;
+              price = newPrice;
+            }
+            
+            // main method
+            public static void main(String[] args) {
+              Store lemonadeStand = new Store("Lemonade", 3.75);
+              lemonadeStand.increasePrice(1.5);
+              System.out.println(lemonadeStand.price);
+            }
+          }
