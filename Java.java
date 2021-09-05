@@ -894,3 +894,228 @@ System.out.println(thunderBird); // Prints: null */
               return "Your balance is " + balance;
             }   
           }
+
+
+// Control flow / conditional - IF-ELSE
+
+          if (true) {
+          // 'if' marks the beginning of the statement 
+          // within () is the boolean data type
+            System.out.println("Hello World!");
+          }
+
+      // Example1
+          boolean isValidPassword = true;
+            if (isValidPassword) {
+              System.out.println("Password accepted!");
+            }
+            // Prints "Password accepted!"
+      
+      // Example2
+          int numberOfItemsInCart = 9;
+            if (numberOfItemsInCart > 12) {
+              System.out.println("Express checkout not available");
+            }
+            // Nothing is printed.
+
+      // If condition is short, can omit {}
+          if (true) System.out.println("Brevity is the soul of wit");
+          // conditional statements does not end with ';'
+
+      // IF-ELSE statements
+          public class Order {
+            public static void main(String[] args) {
+              boolean isFilled = false;
+              // Write an if-then-else statement:
+              if (isFilled == true) {
+                System.out.println("Shipping");
+              } else {
+                System.out.println("Order not ready");
+              }
+            }
+          }
+
+      // Only the FIRST 'true' condition will be run 
+          int testScore = 72;
+          if (testScore >= 90) {
+            System.out.println("A");
+          } else if (testScore >= 80) {
+            System.out.println("B");
+          } else if (testScore >= 70) {
+            System.out.println("C");
+          } else if (testScore >= 60) {
+            System.out.println("D");
+          } else {
+            System.out.println("F");
+          }
+          // prints: C
+
+      // Example
+          String course = "Theatre";
+          if (course.equals("Biology")) {
+            // Enroll in Biology course
+          } else if (course.equals("Algebra")) {
+            // Enroll in Algebra course
+          } else if (course.equals("Theatre")) {
+            // Enroll in Theatre course
+          } else {
+            System.out.println("Course not found!");
+          }
+
+      //Example2
+          public double calculateShipping() {
+              // declare conditional statement here
+              if (shipping == "Regular") {
+                return 0;
+              } else if (shipping == "Express") {
+                return 1.75;
+              } else {
+                return 0.50;
+              }
+            } 
+
+      // Nested conditional statements
+          if (outer condition) {
+            // outer statement evaluated first
+            if (nested condition) {
+              // nested statement evaluated next if outer is true
+              Instruction to execute if both conditions are true
+            }
+          }
+
+        //Example
+            int temp = 45;
+            boolean raining = true;
+            
+            if (temp < 60) {
+              System.out.println("Wear a jacket!");
+              if (raining == true) {
+                System.out.println("Bring your umbrella.");
+              } else {
+                System.out.println("Leave your umbrella home.");
+              }
+            }
+
+        //Example 2
+            public double calculateShipping() {
+                if (shipping.equals("Regular")) {
+                  return 0;
+                } else if (shipping.equals("Express")) {
+                  // Add your code here
+                    if (couponCode == "ship50") {
+                      return 0.85;
+                    } else {
+                      return 1.75;
+                    }
+                } else {
+                  return .50;
+                }
+              }
+
+      // Switch statement - chaining if-else 
+          String course = "History";
+          
+          switch (course) {
+            case "Algebra": 
+              // Enroll in Algebra
+              break; 
+            case "Biology": 
+              // Enroll in Biology
+              break;
+            case "History": 
+              // Enroll in History
+              break;
+            case "Theatre":
+              // Enroll in Theatre
+              break;
+            default:
+              System.out.println("Course not found");
+          }
+          // in this case, will enroll in the history course
+          // if no value, default will be used (similar to the 'else' usage)
+
+      // Example
+            String course = "Biology";
+            
+            switch (course) {
+              case "Algebra": 
+                // Enroll in Algebra
+              case "Biology": 
+                // Enroll in Biology
+              case "History": 
+                // Enroll in History
+              case "Theatre":
+                // Enroll in Theatre
+              default:
+                System.out.println("Course not found");
+            }
+            // if the 'break' is removed, code continues to run after finding 'true'
+            // enrolls student in Biology... AND History and Theatre!
+
+      //Example 2 
+            public double calculateShipping() {
+              double shippingCost;
+              // declare switch statement here
+              switch (shipping) {
+                case "Regular":
+                shippingCost = 0; 
+                  break;
+                case "Express":
+                shippingCost = 1.75; 
+                  break;
+                default: 
+                shippingCost = 0.50;
+              }
+              return shippingCost;
+            }
+
+      //Review conditional statements
+          public class Order {
+            boolean isFilled;
+            double billAmount;
+            String shipping;
+            
+            public Order(boolean filled, double cost, String shippingMethod) {
+              if (cost > 24.00) {
+                System.out.println("High value item!");
+              } else {
+                System.out.println("Low value item!");
+              }
+              isFilled = filled;
+              billAmount = cost;
+              shipping = shippingMethod;
+            }
+            
+            public void ship() {
+              if (isFilled) {
+                System.out.println("Shipping");
+              } else {
+                System.out.println("Order not ready");
+              }
+              
+              double shippingCost = calculateShipping();
+              
+              System.out.println("Shipping cost: ");
+              System.out.println(shippingCost);
+            }
+            
+            public double calculateShipping() {
+              double shippingCost;
+              switch (shipping) {
+                case "Regular":
+                  shippingCost = 0;
+                  break;
+                case "Express":    
+                  shippingCost = 1.75;
+                  break;
+                default:
+                  shippingCost = .50; 
+              }
+              return shippingCost;
+            }
+            
+            public static void main(String[] args) {
+              // create instances and call methods here!
+              Order newOrder = new Order(true, 25.00, "Express");
+            }
+          }
