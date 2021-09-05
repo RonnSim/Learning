@@ -695,13 +695,202 @@ System.out.println(thunderBird); // Prints: null */
             // increase price method
             public void increasePrice(double priceToAdd){
               double newPrice = price + priceToAdd;
+              // new variable newprice = changes to initial price
               price = newPrice;
+              // reassigning price to become newprice
             }
             
             // main method
             public static void main(String[] args) {
               Store lemonadeStand = new Store("Lemonade", 3.75);
               lemonadeStand.increasePrice(1.5);
+              // calls increase price method
               System.out.println(lemonadeStand.price);
             }
+          }
+
+
+      // Return - returns a value when it is called
+
+          public int numberOfTires() {
+            // replaced 'void' with 'int' signify that return type to be an 'int'
+            // void means no value is returned after calling the method
+            int tires = 4;
+            // return statement, any code after the 'return' statement is ignored by the compiler
+            // return value type must match the value type of the method
+            return tires;
+          }
+          public static void main(String[] args){
+            Car myCar = new Car("red");
+            int numTires = myCar.numberOfTires();
+            // non-void methods can be used as variable value or part of an expression
+            // print of numTires will be 4
+          }
+
+        // Returning an object - instead of primitive numbers
+          class CarLot {
+            Car carInLot;
+            public CarLot(Car givenCar) {
+                carInLot = givenCar;
+            }
+        
+            public Car returnACar() {
+                // return Car object
+                return carInLot;
+            }
+        
+            public static void main(String[] args) {
+                Car myCar = new Car("red", 70);
+                System.out.println(myCar); 
+                CarLot myCarLot = new CarLot(myCar);
+                System.out.println(myCarLot.returnACar());
+            }
+        }
+          /* output: Car@2f333739
+                      Car@2f333739 as they have the same memory address */
+
+          
+          //Example
+
+          public class Store {
+            // instance fields
+            String productType;
+            double price;
+            
+            // constructor method
+            public Store(String product, double initialPrice) {
+              productType = product;
+              price = initialPrice;
+            }
+            
+            // get price with tax method
+            public double getPriceWithTax() {
+              double totalPrice = price + price*0.08;
+              return totalPrice;
+            }
+            // main method
+            public static void main(String[] args) {
+              Store lemonadeStand = new Store("Lemonade", 3.75);
+              double lemonadePrice = lemonadeStand.getPriceWithTax();
+              System.out.println(lemonadePrice);
+            }
+          }
+ 
+
+      // toString() method - to return a string instead of Car@2f333739 (memory address)
+
+            class Car {
+ 
+              String color;
+          
+              public Car(String carColor) {
+                  color = carColor;
+              }
+          
+              public static void main(String[] args){
+                  Car myCar = new Car("red");
+                  System.out.println(myCar);
+              }
+          
+            public String toString(){
+                return "This is a " + color + " car!";
+            }
+          }
+          // output: This is a red car!
+
+        // Example
+          public class Store {
+            // instance fields
+            String productType;
+            double price;
+            
+            // constructor method
+            public Store(String product, double initialPrice) {
+              productType = product;
+              price = initialPrice;
+            }
+            
+            // increase price method
+            public void increasePrice(double priceToAdd){
+              double newPrice = price + priceToAdd;
+              price = newPrice;
+            }
+            
+            // get price with tax method
+            public double getPriceWithTax(){
+              double tax = 0.08;
+              double totalPrice = price + price*tax;
+              return totalPrice;
+            }
+
+            // main method
+            public static void main(String[] args) {
+              Store lemonadeStand = new Store("Lemonade", 3.75);
+              Store cookieShop = new Store("Cookies", 5);
+              System.out.println(lemonadeStand);
+              System.out.println(cookieShop);
+            }
+
+            public String toString() {
+              return "This store sells " + productType + " at a price of " + price + ".";
+            }
+          }
+
+
+      // Review of methods
+            public class SavingsAccount {
+  
+              int balance;
+            
+            public SavingsAccount(int initialBalance){
+              balance = initialBalance;
+            }
+            
+            public void checkBalance() {
+              System.out.println("Hello!");
+              System.out.println("Your balance is " + balance);
+            }
+
+            public void deposit(int amountToDeposit) {
+              int newBalance = balance + amountToDeposit;
+              balance = newBalance;
+              System.out.println("You just deposited " + amountToDeposit);
+            }
+
+            public int withdraw(int amountToWithdraw) {
+              int newNewBalance = balance - amountToWithdraw;
+              balance = newNewBalance;
+              System.out.println("You just withdrew " + amountToWithdraw);
+              return amountToWithdraw;
+            }
+
+            public static void main(String[] args){
+              SavingsAccount savings = new SavingsAccount(2000);
+              
+              //Check balance:
+              savings.checkBalance();
+              
+              //Withdrawing:
+              savings.withdraw(300);
+              
+              //Check balance:
+              savings.checkBalance();
+              
+              //Deposit:
+              savings.deposit(600);
+              
+              //Check balance:
+              savings.checkBalance();
+              
+              //Deposit:
+              savings.deposit(600);
+              
+              //Check balance:
+              savings.checkBalance();
+              
+            }
+
+            public String toString() {
+              return "Your balance is " + balance;
+            }   
           }
