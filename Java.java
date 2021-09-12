@@ -1330,3 +1330,62 @@ System.out.println(thunderBird); // Prints: null */
 
           }
         }
+
+
+// Arrays - storing a group of data
+
+          // We can store 4 lottery numbers like this:
+          int firstNumber = 4;
+          int secondNumber = 8;
+          int thirdNumber = 15;
+          int fourthNumber = 16;
+          int fifthNumber = 23;
+          // what about for 100 numbers? - better to use arrays
+
+      // Creating an array
+          double[] prices;
+          // specify the data type and name of data
+          prices = {13.15, 15.87, 14.22, 16.66};
+          // initialize the data to contain
+          // can alsp do it in the same line:
+          double[] prices = {13.15, 15.87, 14.22, 16.66};
+          String[] clothes = {"Tank top", "Beanie"};
+
+          // creating method which returns String array - use String[] 
+          public String[] getTopics() {
+          }
+
+          //Example:
+          public class Newsfeed {
+            public String[] getTopics() {
+              String[] topics = {"Opinion", "Tech", "Science", "Health"};
+              return topics;
+            }
+            public static void main(String[] args){
+              Newsfeed sampleFeed = new Newsfeed();
+              String[] topics = sampleFeed.getTopics();
+              System.out.println(topics);
+            }
+          } // printed out a memory class - random numbers and letters 
+
+      //Importing an array package
+
+           // Need to use toString method to print more descriptive printout
+           // toString method for Java Arrays:
+           import java.util.Arrays;
+           // put this at the top of the file, before defining the class, to make it available in all the codes
+           Arrays.toString()
+           // using one of the package's method - package has many useful methods
+
+           //Example:
+           import java.util.Arrays;
+ 
+            public class Lottery(){
+            
+              public static void main(String[] args){
+                int[] lotteryNumbers = {4, 8, 15, 16, 23, 42};
+                String betterPrintout = Arrays.toString(lotteryNumbers);
+                System.out.println(betterPrintout);
+              }
+            
+            } // printout: [4, 8, 15, 16, 23, 42]
