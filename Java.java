@@ -1389,3 +1389,63 @@ System.out.println(thunderBird); // Prints: null */
               }
             
             } // printout: [4, 8, 15, 16, 23, 42]
+
+            //Example2:
+            import java.util.Arrays;
+            public class Newsfeed {
+              public Newsfeed(){
+              }
+              public String[] getTopics(){
+                String[] topics = {"Opinion", "Tech", "Science", "Health"};
+                return topics;
+              }
+              public static void main(String[] args){
+                Newsfeed sampleFeed = new Newsfeed();
+                String[] topics = sampleFeed.getTopics();
+                System.out.println(Arrays.toString(topics));
+                //using the array toString method in print function
+              }
+            }
+
+      // Getting element by index - using [] with index number
+          double[] prices = {13.1, 15.87, 14.22, 16.66};
+          System.out.println(prices[1]);
+          // prints the number from index 1, prints 15.87
+
+          //Example - views to increase by 1 everytime it is read once
+          import java.util.Arrays;
+
+          public class Newsfeed {
+            
+            String[] topics = {"Opinion", "Tech", "Science", "Health"};
+            int[] views = {0, 0, 0, 0};
+            
+            public Newsfeed(){
+
+            }
+              
+            public String[] getTopics(){
+              return topics;
+            }
+            
+            public String getTopTopic(){
+              return topics[0];
+            }
+            
+            public void viewTopic(int topicIndex){
+              // parameter added for attaching index number assigned in main method
+            views[topicIndex] = views[topicIndex] + 1;
+            } // views array will be updated to add 1 to the assigned index location
+
+            public static void main(String[] args){
+              Newsfeed sampleFeed = new Newsfeed();
+              
+              System.out.println("The top topic is "+ sampleFeed.getTopTopic());
+              
+              sampleFeed.viewTopic(3);
+              // assigned index 3 location to be updated
+              System.out.println("The " + sampleFeed.topics[3] + " topic has been viewed " + sampleFeed.views[3] + " times!"); 
+            }
+          }
+
+      // Creating an empty array
