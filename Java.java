@@ -1121,6 +1121,118 @@ System.out.println(thunderBird); // Prints: null */
           }
 
 
-// Conditional operators
+// Conditional operators - &&, ||
 
-   
+      // AND, && operator
+          true && true
+          // true
+          false && true
+          // false
+          true && false
+          // false
+          false && false
+          // false
+
+          if (tuitionPaid) {
+            if (hasPrerequisite) {
+              // for enrollment of student
+            }
+          }
+          // can be written in this way with && instead:
+          if (tuitionPaid && hasPrerequisite) {
+            // enroll student
+          }
+
+
+          // Example1:
+          public class Reservation {
+            int guestCount;
+            int restaurantCapacity;
+            boolean isRestaurantOpen;
+            boolean isConfirmed;
+            
+            public Reservation(int count, int capacity, boolean open) {
+              guestCount = count;
+              restaurantCapacity = capacity;
+              isRestaurantOpen = open;
+            }  
+            
+            public void confirmReservation() {
+              /* 
+                Write conditional
+                ~~~~~~~~~~~~~~~~~
+                if restaurantCapacity is greater
+                or equal to guestCount
+                AND
+                the restaurant is open:
+                  print "Reservation confirmed"
+                  set isConfirmed to true
+                else:
+                  print "Reservation denied"
+                  set isConfirmed to false
+              */
+              if (restaurantCapacity >= guestCount && isRestaurantOpen) {
+            System.out.println("Reservation confirmed.");
+            isConfirmed = true;
+              } else {
+                System.out.println("Reservation denied.");
+                isConfirmed = false;
+              }
+            }
+
+            public void informUser() {
+              if (isConfirmed == true) {
+                System.out.println("Please enjoy your meal!");
+              } else {
+                System.out.println("Please come again.");
+              }
+            }
+            
+            public static void main(String[] args) {
+              Reservation partyOfThree = new Reservation(3, 12, true);
+              Reservation partyOfFour = new Reservation(4, 3, true);
+              partyOfThree.confirmReservation();
+              partyOfThree.informUser();
+              partyOfFour.confirmReservation();
+              partyOfFour.informUser();
+            }
+          }
+
+
+      // OR, || operator 
+          true || true
+          // true
+          false || true
+          // true
+          true || false
+          // true
+          false || false
+          // false
+
+          if (hasAlgebraPrerequisite) {
+            // Enroll in course
+          }
+          if (hasGeometryPrerequisite) {
+            // Enroll in course
+          }
+          
+          // can write in this way instead:
+          if (hasAlgebraPrerequisite || hasGeometryPrerequisite) {
+            // Enroll in course
+          }
+
+          // To note: short-circuited evaluation can happen:
+          if (1 > 0 || 2 / 0 == 7) {
+            System.out.println("No errors here!");
+          } // no error even though divided by zero, because first operand is true, skips second operand
+
+          //Example:
+          public Reservation(int count, int capacity, boolean open) {
+            // Write conditional statement below
+            if (count > 8 || count < 1) {
+              System.out.println("Invalid reservation!");
+            }
+            guestCount = count;
+            restaurantCapacity = capacity;
+            isRestaurantOpen = open;
+          }  
