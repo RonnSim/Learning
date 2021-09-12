@@ -1121,7 +1121,7 @@ System.out.println(thunderBird); // Prints: null */
           }
 
 
-// Conditional operators - &&, ||
+// Conditional operators - &&, ||, !
 
       // AND, && operator
           true && true
@@ -1236,3 +1236,97 @@ System.out.println(thunderBird); // Prints: null */
             restaurantCapacity = capacity;
             isRestaurantOpen = open;
           }  
+
+      // Logical NOT operator: !
+          !false
+          // true
+          !true
+          // false
+
+          // Strange to have a code block that does nothing:
+          boolean hasPrerequisite = true;
+          if (hasPrerequisite) {
+            // do nothing
+          } else {
+            System.out.println("Must complete prerequisite course!");
+          }
+
+          //instead: 
+          boolean hasPrerequisite = true;
+          if (!hasPrerequisite) {
+            System.out.println("Must complete prerequisite course!");
+          }
+
+          //Example: 
+          public class Reservation {
+            int guestCount;
+            int restaurantCapacity;
+            boolean isRestaurantOpen;
+            boolean isConfirmed;
+            
+            public Reservation(int count, int capacity, boolean open) {
+              if (count < 1 || count > 8) {
+                System.out.println("Invalid reservation!");
+              }
+              guestCount = count;
+              restaurantCapacity = capacity;
+              isRestaurantOpen = open;
+            }  
+            
+            public void confirmReservation() {
+              if (restaurantCapacity >= guestCount && isRestaurantOpen) {
+                System.out.println("Reservation confirmed");
+                isConfirmed = true;
+              } else {
+                System.out.println("Reservation denied");
+                isConfirmed = false;
+              }
+            }
+            
+            public void informUser() {
+              // Write conditional here
+              if (!isConfirmed) {
+                System.out.println("Unable to confirm reservation, please contact restaurant.");
+              } else {
+                System.out.println("Please enjoy your meal!");
+              }
+            }
+            
+            public static void main(String[] args) {
+              Reservation partyOfThree = new Reservation(3, 12, true);
+              Reservation partyOfFour = new Reservation(4, 3, true);
+              partyOfThree.confirmReservation();
+              partyOfThree.informUser();
+              partyOfFour.confirmReservation();
+              partyOfFour.informUser();
+            }
+          }
+
+      // Combination of conditional operators
+          boolean foo = true && !(false || !true)
+          /* Order of execution:
+              1) Conditions placed in parentheses - ()
+              2) NOT - !
+              3) AND - &&
+              4) OR - || */
+          
+          // Example
+          public class Operators {
+          public static void main(String[] args) {
+            int a = 6;
+            int b = 3;
+
+            boolean ex1 = !(a == 7 && (b >= a || a != a));
+            System.out.println(ex1);
+            //Answer: true
+
+            boolean ex2 = a == b || !(b > 3);
+            System.out.println(ex2);
+            // answer: true
+
+            boolean ex3 = !(b <= a && b != a + b);
+            System.out.println(ex3); 
+            //answer: false
+
+          }
+        }
