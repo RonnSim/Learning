@@ -1547,11 +1547,70 @@ System.out.println(thunderBird); // Prints: null */
           } // output: The number of topics is 4
 
       // String[] args: String[] - String array, args - arguments that we pass in from the terminal when we run the class file (so far empty)
-      public class HelloYou {
-        public static void main(String[] args) {
-          System.out.println("Hello " + args[0]);  
+            public class HelloYou {
+              public static void main(String[] args) {
+                System.out.println("Hello " + args[0]);  
+              }
+            }
+            /* input in terminal: java HelloYou Laura
+                output: Hello Laura */
+            // 'String[] args' interpreted as an array with 1 element 'Laura'
+
+            // Example:
+            import java.util.Arrays;
+
+              public class Newsfeed {
+                
+                String[] topics;
+                
+                public Newsfeed(String[] initialTopics) {
+                  topics = initialTopics;
+                }
+                
+                public static void main(String[] args) {
+                  Newsfeed feed;
+                  if (args[0].equals("Human")) {
+                    
+                    //topics for a Human feed:
+                    String[] humanTopics = {"Politics", "Science", "Sports", "Love"};
+                    feed = new Newsfeed(humanTopics);
+                    
+                  } else if(args[0].equals("Robot")) {
+                    
+                    //topics for a Robot feed:
+                    String[] robotTopics = {"Oil", "Parts", "Algorithms", "Love"};
+                    feed = new Newsfeed(robotTopics);
+                    
+                  } else {
+                    String[] genericTopics = {"Opinion", "Tech", "Science", "Health"};
+                    feed = new Newsfeed(genericTopics);
+                  }
+                      
+                  System.out.println("The topics in this feed are:");
+                  System.out.println(Arrays.toString(feed.topics));
+                }
+              } 
+              /* terminal command and output:
+              $ java Newsfeed Robot
+              The topics in this feed are:
+              [Oil, Parts, Algorithms, Love]
+              $ java Newsfeed Human
+              The topics in this feed are:
+              [Politics, Science, Sports, Love]
+              $ */
+
+      // Review:
+      import java.util.Arrays;
+
+      public class Classroom {
+        
+        public static void main(String[] args){
+          String[] students = {"Sade", "Alexus", "Sam", "Koma"};
+          double[] mathScores = new double[4];
+          mathScores[0] = 94.5;
+          mathScores[2] = 76.8;
+          System.out.println("The number of students in the class is " + students.length);
         }
       }
-      /* input in terminal: java HelloYou Laura
-          output: Hello Laura */
-      // 'String[] args' interpreted as an array with 1 element 'Laura'
+
+// Creating ArrayLists
