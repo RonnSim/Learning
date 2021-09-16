@@ -1430,12 +1430,14 @@ System.out.println(thunderBird); // Prints: null */
             
             public String getTopTopic(){
               return topics[0];
+              // Getting element by index: index 0 = first position
             }
             
             public void viewTopic(int topicIndex){
-              // parameter added for attaching index number assigned in main method
+              // parameter added to index number
             views[topicIndex] = views[topicIndex] + 1;
-            } // views array will be updated to add 1 to the assigned index location
+            } // views[number] = views array position
+              // views array will be updated to add 1 to the assigned index location
 
             public static void main(String[] args){
               Newsfeed sampleFeed = new Newsfeed();
@@ -1443,9 +1445,113 @@ System.out.println(thunderBird); // Prints: null */
               System.out.println("The top topic is "+ sampleFeed.getTopTopic());
               
               sampleFeed.viewTopic(3);
-              // assigned index 3 location to be updated
+              // calls .viewTopic method with input of 3, topicIndex = 3 (4th position)
+              // assigned index 3 location to be run
               System.out.println("The " + sampleFeed.topics[3] + " topic has been viewed " + sampleFeed.views[3] + " times!"); 
             }
-          }
+          } /* output: The top topic is Opinion
+                        The Health topic has been viewed 1 times! */
 
       // Creating an empty array
+          String[] menuItems = new String[5];
+          // new array created and declared size of 5, will always be size of 5
+          menuItems[0] = "Veggie hot dog";
+          menuItems[1] = "Potato salad";
+          menuItems[2] = "Cornbread";
+          menuItems[3] = "Roasted broccoli";
+          menuItems[4] = "Coffee ice cream";
+          // we can set each index of the array to be specific item
+
+          // another way of assigning array straight away:
+          String[] menuItems = {"Veggie hot dog", "Potato salad", "Cornbread", "Roasted broccoli", "Coffee ice cream"};
+
+          // changing value of certain position in array:
+          menuItems[3] = "Baked cauliflower";
+          // change position 3 value
+
+          /* For 'new' array created, initial value will be:
+          Data Type	| Initialized Value
+          int	      | 0
+          double	  | 0.0
+          boolean	  | false
+          Reference	| null 
+          eg. String[] my_names = new String[5];
+              int[] my_ages = new int[5];
+          my_names will contain 5 nulls, my_age will contain 5 0s 
+          */
+
+          // Example:
+          import java.util.Arrays;
+
+          public class Newsfeed {
+            
+            String[] topics = {"Opinion", "Tech", "Science", "Health"};
+            int[] views = {0, 0, 0, 0};
+            String[] favoriteArticles;
+            
+            public Newsfeed(){
+              // In the constructor method, we have to initialize the array 'favoriteArticles':
+              favoriteArticles = new String[10];
+              // new empty string of size 10
+            }
+            
+            public void setFavoriteArticle(int favoriteIndex, String newArticle){
+              // Setting favoriteArticles array with index favoriteIndex to the value of newArticle
+              favoriteArticles[favoriteIndex] = newArticle;
+              
+            }
+              
+            public static void main(String[] args){
+              Newsfeed sampleFeed = new Newsfeed();
+              
+              sampleFeed.setFavoriteArticle(2, "Humans: Exterminate Or Not?");
+              sampleFeed.setFavoriteArticle(3, "Organic Eye Implants");
+              sampleFeed.setFavoriteArticle(0, "Oil News");
+              
+              System.out.println(Arrays.toString(sampleFeed.favoriteArticles));
+            }
+          }
+          // outputs: [Oil News, null, Humans: Exterminate Or Not?, Organic Eye Implants, null, null, null, null, null, null]
+
+      // Getting length of array - to quicky know how many values/elements there are in the array
+          String[] menuItems = new String[5];
+          System.out.println(menuItems.length);
+          // output: 5 - 5 slots even though they are empty
+
+          //Example:
+          import java.util.Arrays;
+
+          public class Newsfeed {
+            
+            String[] topics = {"Opinion", "Tech", "Science", "Health"};
+            int[] views = {0, 0, 0, 0};
+            
+            public Newsfeed(){
+
+            }
+              
+            public String[] getTopics(){
+              return topics;
+            }
+            
+            public int getNumTopics(){
+              return topics.length;
+            }
+            
+            public static void main(String[] args){
+              Newsfeed sampleFeed = new Newsfeed();
+              
+              System.out.println("The number of topics is "+ sampleFeed.getNumTopics());
+            
+            }
+          } // output: The number of topics is 4
+
+      // String[] args: String[] - String array, args - arguments that we pass in from the terminal when we run the class file (so far empty)
+      public class HelloYou {
+        public static void main(String[] args) {
+          System.out.println("Hello " + args[0]);  
+        }
+      }
+      /* input in terminal: java HelloYou Laura
+          output: Hello Laura */
+      // 'String[] args' interpreted as an array with 1 element 'Laura'
